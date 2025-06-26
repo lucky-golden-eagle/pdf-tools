@@ -1,0 +1,39 @@
+{
+  "name": "pdf-tools",
+  "version": "1.0.0",
+  "description": "Electron app to modify PDF metadata and split PDFs by file size",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Golden_E@gle",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^37.0.0",
+    "pdf-lib": "^1.17.1"
+  },
+  "build": {
+    "appId": "com.brightlogic.pdftool",
+    "productName": "PDF Tool",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "^26.0.12"
+  }
+}

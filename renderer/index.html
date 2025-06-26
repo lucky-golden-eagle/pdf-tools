@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen p-6 font-sans text-gray-800">
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4">📄 PDF Tool</h1>
+
+    <button onclick="selectPDF()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+      Upload PDF
+    </button>
+
+    <div id="pdf-info" class="mt-6 hidden">
+      <div class="flex space-x-4 border-b pb-2 mb-4">
+        File Information
+      </div>
+      <div class="space-y-3">
+        <input id="pdf-title" disabled class="w-full px-3 py-2 rounded" />
+        <input id="pdf-pages" disabled class="w-full px-3 py-2 rounded" />
+        <input id="pdf-filesize" disabled class="w-full px-3 py-2 rounded" />
+      </div>
+    </div>
+
+    <div id="tool-tabs" class="mt-6 hidden">
+      <div class="flex space-x-4 border-b pb-2 mb-4">
+        <button onclick="showTab('metadata')"
+          class="tab-btn font-semibold text-blue-600 border-b-2 border-blue-600">Edit Metadata</button>
+        <button onclick="showTab('split')" class="tab-btn text-gray-600 hover:text-blue-600">Split PDF</button>
+      </div>
+
+      <div id="metadata-tab">
+        <div class="space-y-3">
+          <input id="title" placeholder="Title" class="w-full border px-3 py-2 rounded" />
+          <input id="author" placeholder="Author" class="w-full border px-3 py-2 rounded" />
+          <input id="subject" placeholder="Subject" class="w-full border px-3 py-2 rounded" />
+          <input id="keywords" placeholder="Keywords (comma-separated)" class="w-full border px-3 py-2 rounded" />
+          <input id="created" placeholder="Created" class="w-full border px-3 py-2 rounded">
+          <input id="modified" placeholder="Modified" class="w-full border px-3 py-2 rounded">
+          <button onclick="updateMetadata()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Update
+            Metadata & Export</button>
+        </div>
+      </div>
+
+      <div id="split-tab" class="hidden">
+        <div class="space-y-3">
+          <input id="split-size" type="number" placeholder="Split Size (MB)" class="w-full border px-3 py-2 rounded" />
+          <button onclick="splitPDF()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Split
+            PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="alert-box" class="hidden fixed top-5 right-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded shadow-lg z-50">
+      <strong class="font-bold">Success!</strong>
+      <span class="block sm:inline">Your action was completed successfully.</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
