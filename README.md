@@ -17,6 +17,11 @@ A lightweight Electron-based desktop app for performing common PDF operations, i
 ## 🚀 Installation
 
 1. Clone the repo:
-   ```bash
-   git clone https://github.com/yourusername/pdf-tools.git
-   cd pdf-tools
+  ```bash
+  git clone https://github.com/yourusername/pdf-tools.git
+  cd pdf-tools
+  ```
+2. Run the application:
+  ```bash
+  npm start
+  ```
